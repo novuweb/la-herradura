@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Herradura Luxury Homes | Venta y Alquiler en Granada, Málaga y Cádiz</title>
+<meta name="description" content="La Herradura Luxury Homes. Venta, compra y alquiler de viviendas en Granada, Málaga y Cádiz. Atención personalizada con Lucía Cabrera.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "La Herradura Luxury Homes",
+  "image": "assets/logo.png",
+  "telephone": "+34699804210",
+  "email": "inmobiliarialuciacabrera@gmail.com",
+  "areaServed": ["Granada", "Málaga", "Cádiz"],
+  "openingHours": "Mo-Sa 10:00-18:00",
+  "sameAs": [
+    "https://www.instagram.com/lucia_cabrera_agente",
+    "https://www.facebook.com/Agente%20inmobiliario%20Lucía%20Cabrera"
+  ]
+}
+</script>
+<style>
+  :root{
+    --black-deep:#0D0D0D;
+    --black-carbon:#1A1A1A;
+    --gold:#C9A24B;
+    --gold-light:#E0C878;
+    --white:#FFFFFF;
+    --white-broken:#F8F6F2;
+    --gray-mid:#888888;
+    --gray-dark:#333333;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--gray-dark);
+    background:var(--white);
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display',serif;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1280px;margin:0 auto;}
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    height:40px;
+    background:var(--black-deep);
+    color:var(--gold-light);
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+  }
+  .topbar .topbar-left{display:flex;gap:25px;}
+  @media (max-width:768px){
+    .topbar{padding:0 16px;}
+    .topbar .topbar-left span:last-child{display:none;}
+    .topbar .topbar-right{display:none;}
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:85px;
+    background:var(--black-deep);
+    border-bottom:1px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 40px;
+    transition:all .3s ease;
+  }
+  .navbar.scrolled{
+    height:65px;
+    box-shadow:0 8px 24px rgba(0,0,0,.4);
+  }
+  .logo-block{display:flex;align-items:center;gap:12px;}
+  .logo-block img{height:48px;width:auto;transition:height .3s ease;}
+  .navbar.scrolled .logo-block img{height:38px;}
+  .logo-text-main{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:26px;
+    color:var(--white);
+    line-height:1;
+  }
+  .logo-text-sub{
+    font-size:10px;
+    letter-spacing:4px;
+    color:var(--gold);
+    margin-top:4px;
+  }
+  .nav-links{
+    display:flex;
+    gap:35px;
+  }
+  .nav-links a{
+    position:relative;
+    color:var(--white);
+    font-size:13px;
+    letter-spacing:1px;
+    font-weight:500;
+    padding-bottom:6px;
+    transition:color .3s ease;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:0;
+    width:0;height:1px;
+    background:var(--gold);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover{color:var(--gold);}
+  .nav-links a:hover::after{width:100%;}
+  .btn-contact-nav{
+    background:var(--gold);
+    color:var(--black-deep)!important;
+    padding:12px 28px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    transition:all .3s ease;
+  }
+  .btn-contact-nav:hover{background:var(--white);color:var(--black-deep)!important;}
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    z-index:1100;
+  }
+  .hamburger span{
+    width:26px;height:2px;background:var(--gold);
+    transition:all .3s ease;
+  }
+  .mobile-menu{
+    position:fixed;
+    top:0;right:-100%;
+    width:280px;
+    height:100vh;
+    background:var(--black-deep);
+    border-left:1px solid var(--gold);
+    z-index:1200;
+    transition:right .35s ease;
+    padding:100px 30px;
+  }
+  .mobile-menu.open{right:0;}
+  .mobile-menu a{
+    display:block;
+    color:var(--white);
+    font-size:16px;
+    letter-spacing:1px;
+    margin-bottom:28px;
+    padding-bottom:6px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .mobile-menu a:hover{color:var(--gold);}
+  .menu-overlay{
+    position:fixed;inset:0;
+    background:rgba(0,0,0,.6);
+    z-index:1150;
+    display:none;
+  }
+  .menu-overlay.show{display:block;}
+
+  @media (max-width:1024px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+    .btn-contact-nav{display:none;}
+  }
+  @media (max-width:768px){
+    .navbar{padding:0 20px;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    height:95vh;
+    min-height:600px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(rgba(13,13,13,.6),rgba(13,13,13,.78)), url('assets/hero-inmobiliaria.jpg') center/cover no-repeat;
+    position:relative;
+    padding:0 20px;
+  }
+  .hero-content{max-width:850px;}
+  .hero-tag{
+    color:var(--gold);
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:25px;
+    opacity:0;
+    transform:translateY(-15px);
+    animation:fadeSlideDown .8s ease forwards;
+  }
+  .hero h1{
+    color:var(--white);
+    font-weight:700;
+    font-size:72px;
+    line-height:1.15;
+    margin-bottom:25px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeSlideUp .9s ease .2s forwards;
+  }
+  .hero h1 em{color:var(--gold);font-style:italic;}
+  .hero p{
+    color:rgba(255,255,255,.9);
+    line-height:1.7;
+    font-size:18px;
+    margin-bottom:40px;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeSlideUp .9s ease .4s forwards;
+  }
+  .hero-buttons{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeSlideUp .9s ease .6s forwards;
+  }
+  .btn-gold{
+    background:var(--gold);
+    color:var(--black-deep);
+    padding:16px 40px;
+    border-radius:2px;
+    letter-spacing:1px;
+    font-weight:600;
+    font-size:14px;
+    border:1px solid var(--gold);
+    transition:all .3s ease;
+    cursor:pointer;
+    display:inline-block;
+  }
+  .btn-gold:hover{background:var(--white);border-color:var(--white);}
+  .btn-outline-white{
+    background:transparent;
+    color:var(--white);
+    border:1px solid var(--white);
+    padding:16px 40px;
+    border-radius:2px;
+    letter-spacing:1px;
+    font-weight:600;
+    font-size:14px;
+    transition:all .3s ease;
+    cursor:pointer;
+    display:inline-block;
+  }
+  .btn-outline-white:hover{border-color:var(--gold);color:var(--gold);}
+  .hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:60px;
+    opacity:0;
+    animation:fadeSlideUp .9s ease .8s forwards;
+  }
+  .hero-stats .stat{
+    text-align:center;
+    padding:0 30px;
+    border-right:1px solid rgba(201,162,75,.4);
+  }
+  .hero-stats .stat:last-child{border-right:none;}
+  .hero-stats .stat .num{
+    font-family:'Playfair Display',serif;
+    color:var(--gold);
+    font-size:36px;
+    font-weight:700;
+  }
+  .hero-stats .stat .label{
+    color:var(--white);
+    font-size:12px;
+    letter-spacing:1px;
+    margin-top:4px;
+  }
+  .scroll-indicator{
+    position:absolute;
+    bottom:30px;left:50%;
+    transform:translateX(-50%);
+    color:var(--gold);
+    font-size:22px;
+    animation:bounce 2s infinite;
+  }
+  @keyframes fadeSlideDown{to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeSlideUp{to{opacity:1;transform:translateY(0);}}
+  @keyframes bounce{
+    0%,100%{transform:translate(-50%,0);}
+    50%{transform:translate(-50%,10px);}
+  }
+  @media (max-width:768px){
+    .hero h1{font-size:42px;}
+    .hero p{font-size:16px;}
+    .hero-stats{gap:15px;}
+    .hero-stats .stat{padding:0 12px;}
+  }
+
+  /* ===== SERVICIOS RAPIDOS ===== */
+  .quick-services{
+    padding:50px 40px;
+    background:var(--white-broken);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    text-align:center;
+  }
+  .quick-services .qs-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .quick-services .qs-item .icon{font-size:30px;color:var(--gold);}
+  .quick-services .qs-item span{
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    color:var(--black-deep);
+  }
+  @media (max-width:768px){
+    .quick-services{grid-template-columns:repeat(2,1fr);padding:40px 20px;}
+  }
+
+  /* ===== SECTION GENERAL ===== */
+  .section{
+    padding:100px 40px;
+  }
+  @media (max-width:768px){
+    .section{padding:60px 20px;}
+  }
+  .section-tag{
+    text-align:center;
+    color:var(--gold);
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:15px;
+  }
+  .section-title{
+    text-align:center;
+    font-size:44px;
+    margin-bottom:15px;
+  }
+  .section-subtitle{
+    text-align:center;
+    margin-bottom:60px;
+    font-size:16px;
+  }
+
+  .bg-light{background:var(--white-broken);}
+  .bg-carbon{background:var(--black-carbon);color:var(--white);}
+  .bg-deep{background:var(--black-deep);color:var(--white);}
+
+  /* ===== PROPERTY GRID ===== */
+  .property-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  @media (max-width:1024px){
+    .property-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:768px){
+    .property-grid{grid-template-columns:1fr;}
+  }
+  .property-card{
+    background:var(--white);
+    border-radius:4px;
+    overflow:hidden;
+    box-shadow:0 4px 14px rgba(0,0,0,.07);
+    transition:all .3s ease;
+  }
+  .property-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 34px rgba(201,162,75,.25);
+  }
+  .property-card.dark{background:var(--black-deep);color:var(--white);}
+  .property-img{
+    height:240px;
+    background:#E5E5E5;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:8px;
+    color:#999;
+  }
+  .property-card.dark .property-img{background:#262626;color:#777;}
+  .property-img .house-icon{font-size:34px;}
+  .property-img .ph-text{font-size:13px;letter-spacing:.5px;}
+  .property-badge{
+    position:absolute;
+    top:14px;left:14px;
+    background:var(--gold);
+    color:var(--black-deep);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.5px;
+    padding:5px 12px;
+    border-radius:2px;
+  }
+  .property-body{padding:25px;}
+  .property-price{
+    font-family:'Playfair Display',serif;
+    color:var(--gold);
+    font-size:26px;
+    margin-bottom:8px;
+  }
+  .property-title{
+    font-weight:700;
+    font-size:18px;
+    margin-bottom:8px;
+  }
+  .property-location{
+    color:var(--gray-mid);
+    font-size:14px;
+    margin-bottom:18px;
+  }
+  .property-sep{
+    height:1px;
+    background:rgba(0,0,0,.08);
+    margin-bottom:16px;
+  }
+  .property-card.dark .property-sep{background:rgba(255,255,255,.12);}
+  .property-features{
+    display:flex;
+    gap:14px;
+    font-size:13px;
+    color:var(--gray-dark);
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .property-card.dark .property-features{color:#ccc;}
+  .btn-property{
+    width:100%;
+    background:var(--black-deep);
+    color:var(--white);
+    padding:12px;
+    border-radius:2px;
+    border:none;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.5px;
+    cursor:pointer;
+    transition:all .3s ease;
+  }
+  .property-card.dark .btn-property{background:var(--gold);color:var(--black-deep);}
+  .btn-property:hover{background:var(--gold);color:var(--black-deep);}
+  .property-card.dark .btn-property:hover{background:var(--white);}
+
+  .note-box{
+    max-width:700px;
+    margin:50px auto 0;
+    text-align:center;
+    background:rgba(201,162,75,.1);
+    border:1px solid rgba(201,162,75,.3);
+    padding:18px 25px;
+    border-radius:4px;
+    font-size:14px;
+    color:var(--gray-dark);
+  }
+  .bg-carbon .note-box{color:#ddd;}
+  .center-btn-wrap{text-align:center;margin-top:45px;}
+  .btn-outline-gold{
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:15px 38px;
+    border-radius:2px;
+    letter-spacing:1px;
+    font-weight:600;
+    font-size:13px;
+    transition:all .3s ease;
+    cursor:pointer;
+  }
+  .btn-outline-gold:hover{background:var(--gold);color:var(--black-deep);}
+
+  /* ===== SOBRE MI ===== */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  @media (max-width:1024px){
+    .about-grid{grid-template-columns:1fr;}
+  }
+  .about-img-wrap{position:relative;}
+  .about-img{
+    width:100%;
+    aspect-ratio:4/5;
+    border-radius:4px;
+    position:relative;
+    display:block;
+    object-fit:cover;
+    object-position:50% 12%;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+  }
+  .about-tag{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:600;margin-bottom:15px;}
+  .about-name{color:var(--black-deep);font-size:42px;margin-bottom:10px;}
+  .about-subtitle{color:var(--gold);font-style:italic;font-size:18px;margin-bottom:25px;}
+  .about-text{line-height:1.8;color:var(--gray-dark);margin-bottom:25px;}
+  .about-values li{
+    margin-bottom:12px;
+    font-size:15px;
+    color:var(--gray-dark);
+  }
+  .about-values li::before{content:"✓ ";color:var(--gold);font-weight:700;}
+  .btn-dark{
+    background:var(--black-deep);
+    color:var(--white);
+    padding:15px 36px;
+    border-radius:2px;
+    border:none;
+    font-weight:600;
+    letter-spacing:.5px;
+    margin-top:30px;
+    cursor:pointer;
+    transition:all .3s ease;
+    display:inline-block;
+  }
+  .btn-dark:hover{background:var(--gold);color:var(--black-deep);}
+
+  /* ===== ZONAS ===== */
+  .zones-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  @media (max-width:768px){
+    .zones-grid{grid-template-columns:1fr;}
+  }
+  .zone-card{
+    background:var(--black-carbon);
+    border:1px solid rgba(201,162,75,.3);
+    border-radius:4px;
+    text-align:center;
+    overflow:hidden;
+    transition:all .3s ease;
+  }
+  .zone-card:hover{
+    border-color:var(--gold);
+    transform:translateY(-8px);
+  }
+  .zone-img{
+    height:200px;
+    width:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .zone-card-body{padding:30px 30px 40px;}
+  .zone-card .zone-icon{font-size:32px;color:var(--gold);margin-bottom:12px;}
+  .zone-card h3{color:var(--white);font-size:24px;margin-bottom:12px;}
+  .zone-card p{color:#ccc;font-size:14px;line-height:1.6;}
+
+  /* ===== PROCESO ===== */
+  .process-steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    max-width:1280px;
+    margin:0 auto;
+    position:relative;
+  }
+  @media (max-width:1024px){
+    .process-steps{grid-template-columns:1fr;}
+  }
+  .process-step{
+    text-align:center;
+    position:relative;
+  }
+  .step-num{
+    width:60px;height:60px;
+    background:var(--gold);
+    color:var(--black-deep);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:20px;
+    margin:0 auto 20px;
+  }
+  .process-step h4{font-size:17px;color:var(--black-deep);margin-bottom:10px;letter-spacing:.5px;}
+  .process-step p{font-size:14px;color:var(--gray-dark);line-height:1.6;}
+
+  /* ===== CONTACTO ===== */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  @media (max-width:1024px){
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  .contact-info h3{color:var(--white);font-size:26px;margin-bottom:30px;}
+  .contact-block{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    margin-bottom:26px;
+  }
+  .contact-block .icon{color:var(--gold);font-size:22px;}
+  .contact-block .label{font-size:12px;letter-spacing:1px;color:var(--gold);margin-bottom:4px;}
+  .contact-block .value{color:var(--white);font-size:15px;}
+  .social-row{display:flex;gap:18px;margin-top:30px;}
+  .social-row a{
+    color:var(--gold);
+    border:1px solid var(--gold);
+    width:42px;height:42px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all .3s ease;
+  }
+  .social-row a:hover{background:var(--gold);color:var(--black-deep);}
+
+  .contact-form-wrap{
+    background:var(--black-carbon);
+    border:1px solid rgba(201,162,75,.3);
+    border-radius:4px;
+    padding:40px;
+  }
+  .contact-form-wrap h3{color:var(--white);margin-bottom:25px;font-size:22px;}
+  .form-group{margin-bottom:18px;}
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    width:100%;
+    background:var(--black-deep);
+    border:1px solid #333;
+    color:var(--white);
+    padding:13px 15px;
+    border-radius:2px;
+    font-family:'Montserrat',sans-serif;
+    font-size:14px;
+    outline:none;
+    transition:border-color .3s ease;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{border-color:var(--gold);}
+  .form-group textarea{resize:vertical;min-height:100px;}
+  .btn-submit{
+    width:100%;
+    background:var(--gold);
+    color:var(--black-deep);
+    border:none;
+    padding:16px;
+    border-radius:2px;
+    font-weight:700;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:all .3s ease;
+  }
+  .btn-submit:hover{background:var(--white);}
+
+  /* ===== CTA FINAL ===== */
+  .cta-final{
+    padding:80px 40px;
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:var(--black-deep);
+    text-align:center;
+  }
+  .cta-final h2{font-size:42px;margin-bottom:20px;}
+  .cta-final p{font-size:17px;opacity:.85;margin-bottom:35px;}
+  .btn-cta-dark{
+    background:var(--black-deep);
+    color:var(--gold);
+    padding:18px 50px;
+    border-radius:2px;
+    font-weight:600;
+    letter-spacing:1px;
+    border:none;
+    cursor:pointer;
+    transition:all .3s ease;
+    display:inline-block;
+  }
+  .btn-cta-dark:hover{background:var(--white);color:var(--black-deep);}
+
+  /* ===== FOOTER ===== */
+  .footer{
+    background:var(--black-deep);
+    color:var(--white);
+    padding:70px 40px 30px;
+    border-top:1px solid var(--gold);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  @media (max-width:768px){
+    .footer{padding:50px 20px 30px;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  .footer h4{color:var(--gold);font-size:14px;letter-spacing:1px;margin-bottom:18px;}
+  .footer-brand .logo-text-main{font-size:24px;}
+  .footer-brand p{color:var(--gray-mid);font-size:14px;margin-top:15px;line-height:1.6;}
+  .footer-nav li{margin-bottom:10px;}
+  .footer-nav a:hover{color:var(--gold);}
+  .footer-contact p{font-size:13px;margin-bottom:10px;color:#ddd;}
+  .footer-social a{display:block;margin-bottom:10px;color:#ddd;font-size:13px;}
+  .footer-social a:hover{color:var(--gold);}
+  .footer-bottom{
+    text-align:center;
+    font-size:12px;
+    color:rgba(255,255,255,.6);
+    margin-top:50px;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:25px;
+  }
+
+  /* ===== REVEAL ANIMATION ===== */
+  .reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <span>📞 699 804 210</span>
+    <span>✉️ inmobiliarialuciacabrera@gmail.com</span>
+  </div>
+  <div class="topbar-right">🕐 L-S: 10:00 - 18:00</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="#inicio" class="logo-block">
+    <img src="assets/logo.png" alt="La Herradura Luxury Homes">
+    <div>
+      <div class="logo-text-main">LA HERRADURA</div>
+      <div class="logo-text-sub">LUXURY HOMES</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#inicio">INICIO</a>
+    <a href="#venta">VENTA</a>
+    <a href="#alquileres">ALQUILERES</a>
+    <a href="#sobre-mi">SOBRE MÍ</a>
+    <a href="#zonas">ZONAS</a>
+    <a href="#contacto">CONTACTO</a>
+  </div>
+  <a href="https://wa.me/34699804210" target="_blank" class="btn-contact-nav">CONTACTAR</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="menu-overlay" id="menuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio">INICIO</a>
+  <a href="#venta">VENTA</a>
+  <a href="#alquileres">ALQUILERES</a>
+  <a href="#sobre-mi">SOBRE MÍ</a>
+  <a href="#zonas">ZONAS</a>
+  <a href="#contacto">CONTACTO</a>
+  <a href="https://wa.me/34699804210" target="_blank" style="color:var(--gold);">CONTACTAR</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-tag">✦ GRANADA · MÁLAGA · CÁDIZ</div>
+    <h1>Encuentra el hogar de tus <em>sueños</em></h1>
+    <p>Venta, compra y alquiler de viviendas en Granada, Málaga y Cádiz. Atención personalizada para acompañarte en cada paso.</p>
+    <div class="hero-buttons">
+      <a href="#venta" class="btn-gold">VER PROPIEDADES</a>
+      <a href="#contacto" class="btn-outline-white">CONTACTAR</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num" data-count="4">0</div><div class="label">SERVICIOS</div></div>
+      <div class="stat"><div class="num" data-count="3">0</div><div class="label">PROVINCIAS</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="%">0</div><div class="label">PERSONALIZADO</div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator">⌄</div>
+</section>
+
+<!-- SERVICIOS RAPIDOS -->
+<section class="quick-services">
+  <div class="qs-item"><span class="icon">✓</span><span>VENTA DE VIVIENDAS</span></div>
+  <div class="qs-item"><span class="icon">✓</span><span>ALQUILER ANUAL</span></div>
+  <div class="qs-item"><span class="icon">✓</span><span>ALQUILER VACACIONAL</span></div>
+  <div class="qs-item"><span class="icon">✓</span><span>ASESORAMIENTO EXPERTO</span></div>
+</section>
+
+<!-- VENTA / COMPRA -->
+<section class="section bg-light" id="venta">
+  <div class="section-tag reveal">EN VENTA</div>
+  <h2 class="section-title reveal" style="color:var(--black-deep);">Propiedades en venta</h2>
+  <p class="section-subtitle reveal" style="color:var(--gray-dark);">Descubre nuestra selección de viviendas en Granada, Málaga y Cádiz</p>
+
+  <div class="property-grid">
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card reveal">
+      <div class="property-img">
+        <span class="property-badge">EN VENTA</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card reveal">
+      <div class="property-img">
+        <span class="property-badge">EN VENTA</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card reveal">
+      <div class="property-img">
+        <span class="property-badge">EN VENTA</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card reveal">
+      <div class="property-img">
+        <span class="property-badge">EN VENTA</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card reveal">
+      <div class="property-img">
+        <span class="property-badge">EN VENTA</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card reveal">
+      <div class="property-img">
+        <span class="property-badge">EN VENTA</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+  </div>
+
+  <div class="note-box reveal">💡 Estas son plantillas de ejemplo. Se añadirán aquí las propiedades reales con fotos, precios y características.</div>
+</section>
+
+<!-- ALQUILERES -->
+<section class="section bg-carbon" id="alquileres">
+  <div class="section-tag reveal">EN ALQUILER</div>
+  <h2 class="section-title reveal" style="color:var(--white);">Viviendas en alquiler</h2>
+  <p class="section-subtitle reveal" style="color:var(--gray-mid);">Alquiler anual y vacacional en las mejores zonas</p>
+
+  <div class="property-grid">
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card dark reveal">
+      <div class="property-img">
+        <span class="property-badge">ALQUILER ANUAL</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €/mes</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card dark reveal">
+      <div class="property-img">
+        <span class="property-badge">VACACIONAL</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €/noche</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card dark reveal">
+      <div class="property-img">
+        <span class="property-badge">ALQUILER ANUAL</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €/mes</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card dark reveal">
+      <div class="property-img">
+        <span class="property-badge">VACACIONAL</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €/noche</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card dark reveal">
+      <div class="property-img">
+        <span class="property-badge">ALQUILER ANUAL</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €/mes</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+
+    <!-- PROPIEDAD: duplica este bloque para añadir más -->
+    <div class="property-card dark reveal">
+      <div class="property-img">
+        <span class="property-badge">VACACIONAL</span>
+        <span class="house-icon">🏠</span>
+        <span class="ph-text">[Imagen de la propiedad]</span>
+      </div>
+      <div class="property-body">
+        <div class="property-price">[Precio] €/noche</div>
+        <div class="property-title">[Tipo de vivienda - Zona]</div>
+        <div class="property-location">📍 [Localidad, Provincia]</div>
+        <div class="property-sep"></div>
+        <div class="property-features">
+          <span>🛏️ [X] hab</span>
+          <span>🛁 [X] baños</span>
+          <span>📐 [X] m²</span>
+        </div>
+        <button class="btn-property" onclick="window.open('https://wa.me/34699804210','_blank')">VER DETALLES</button>
+      </div>
+    </div>
+    <!-- /PROPIEDAD -->
+  </div>
+
+  <div class="note-box reveal">💡 Plantillas de ejemplo. Lucía añadirá aquí sus alquileres reales. Los vacacionales se reservan por contacto directo.</div>
+  <div class="center-btn-wrap reveal">
+    <button class="btn-gold" onclick="window.open('https://wa.me/34699804210','_blank')" style="border:none;">CONSULTAR DISPONIBILIDAD</button>
+  </div>
+</section>
+
+<!-- SOBRE MI -->
+<section class="section bg-light" id="sobre-mi">
+  <div class="about-grid">
+    <div class="about-img-wrap reveal">
+      <img class="about-img" src="assets/lucia.jpg" alt="Lucía Cabrera, agente inmobiliaria">
+    </div>
+    <div class="reveal">
+      <div class="about-tag">SOBRE MÍ</div>
+      <h2 class="about-name">Lucía Cabrera</h2>
+      <div class="about-subtitle">Tu agente inmobiliaria de confianza</div>
+      <p class="about-text">Soy Lucía Cabrera, agente inmobiliaria especializada en la venta, compra y alquiler de viviendas en Granada, Málaga y Cádiz. Mi objetivo es acompañarte en una de las decisiones más importantes de tu vida: encontrar tu hogar. Trabajo con cercanía, transparencia y dedicación, ofreciéndote un servicio totalmente personalizado.</p>
+      <p class="about-text">Ya sea que busques comprar, vender o alquilar, ya sea tu vivienda habitual o una propiedad vacacional en la costa, estoy aquí para hacer que el proceso sea fácil, claro y exitoso.</p>
+      <ul class="about-values">
+        <li>Atención personalizada y cercana</li>
+        <li>Conocimiento de Granada, Málaga y Cádiz</li>
+        <li>Venta, compra y alquiler</li>
+        <li>Transparencia en todo el proceso</li>
+      </ul>
+      <a href="#contacto" class="btn-dark">TRABAJEMOS JUNTOS</a>
+    </div>
+  </div>
+</section>
+
+<!-- ZONAS -->
+<section class="section bg-deep" id="zonas">
+  <div class="section-tag reveal">DÓNDE TRABAJO</div>
+  <h2 class="section-title reveal" style="color:var(--white);">Zonas de actuación</h2>
+  <p class="section-subtitle reveal" style="color:var(--gray-mid);">Cubro las mejores zonas del sur de España</p>
+  <div class="zones-grid">
+    <div class="zone-card reveal">
+      <img class="zone-img" src="assets/granada.jpg" alt="Granada">
+      <div class="zone-card-body">
+        <div class="zone-icon">📍</div>
+        <h3>GRANADA</h3>
+        <p>Provincia y costa. Ciudad, pueblos y la Costa Tropical.</p>
+      </div>
+    </div>
+    <div class="zone-card reveal">
+      <img class="zone-img" src="assets/malaga.webp" alt="Málaga">
+      <div class="zone-card-body">
+        <div class="zone-icon">📍</div>
+        <h3>MÁLAGA</h3>
+        <p>Capital y Costa del Sol. Viviendas y propiedades vacacionales.</p>
+      </div>
+    </div>
+    <div class="zone-card reveal">
+      <img class="zone-img" src="assets/cadiz.webp" alt="Cádiz">
+      <div class="zone-card-body">
+        <div class="zone-icon">📍</div>
+        <h3>CÁDIZ</h3>
+        <p>Costa gaditana. Propiedades en venta y alquiler.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section bg-light">
+  <div class="section-tag reveal">CÓMO TRABAJO</div>
+  <h2 class="section-title reveal" style="color:var(--black-deep);">Tu camino hacia el hogar ideal</h2>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-num">01</div>
+      <h4>CONTACTO</h4>
+      <p>Cuéntame qué buscas o qué quieres vender/alquilar.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">02</div>
+      <h4>ASESORAMIENTO</h4>
+      <p>Te oriento con las mejores opciones según tus necesidades.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">03</div>
+      <h4>VISITA</h4>
+      <p>Visitamos las propiedades que más te interesen.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-num">04</div>
+      <h4>ACUERDO</h4>
+      <p>Cerramos la operación con total transparencia y seguridad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section bg-deep" id="contacto">
+  <div class="section-tag reveal">CONTACTO</div>
+  <h2 class="section-title reveal" style="color:var(--white);">¿Hablamos?</h2>
+  <p class="section-subtitle reveal" style="color:var(--gray-mid);">Cuéntame qué necesitas y te ayudo a conseguirlo</p>
+
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Contacta conmigo</h3>
+      <div class="contact-block">
+        <span class="icon">📞</span>
+        <div>
+          <div class="label">TELÉFONO</div>
+          <a class="value" href="tel:+34699804210">699 804 210</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <span class="icon">💬</span>
+        <div>
+          <div class="label">WHATSAPP</div>
+          <a class="value" href="https://wa.me/34699804210" target="_blank">699 804 210</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <span class="icon">✉️</span>
+        <div>
+          <div class="label">EMAIL</div>
+          <a class="value" href="mailto:inmobiliarialuciacabrera@gmail.com">inmobiliarialuciacabrera@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-block">
+        <span class="icon">🕐</span>
+        <div>
+          <div class="label">HORARIO</div>
+          <div class="value">Lunes a Sábado: 10:00 - 18:00</div>
+        </div>
+      </div>
+      <div class="social-row">
+        <a href="https://www.instagram.com/lucia_cabrera_agente" target="_blank" title="Instagram">IG</a>
+        <a href="https://www.facebook.com/" target="_blank" title="Facebook">FB</a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal">
+      <h3>Solicita información</h3>
+      <form id="contactForm">
+        <div class="form-group"><input type="text" id="f-nombre" placeholder="Nombre" required></div>
+        <div class="form-group"><input type="tel" id="f-telefono" placeholder="Teléfono" required></div>
+        <div class="form-group"><input type="email" id="f-email" placeholder="Email" required></div>
+        <div class="form-group">
+          <select id="f-tipo" required>
+            <option value="" disabled selected>¿Qué buscas?</option>
+            <option value="Comprar">Comprar</option>
+            <option value="Vender">Vender</option>
+            <option value="Alquilar">Alquilar</option>
+            <option value="Alquiler vacacional">Alquiler vacacional</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select id="f-zona" required>
+            <option value="" disabled selected>Zona de interés</option>
+            <option value="Granada">Granada</option>
+            <option value="Málaga">Málaga</option>
+            <option value="Cádiz">Cádiz</option>
+          </select>
+        </div>
+        <div class="form-group"><textarea id="f-mensaje" placeholder="Cuéntame qué necesitas" required></textarea></div>
+        <button type="submit" class="btn-submit">ENVIAR SOLICITUD</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2 class="reveal">Tu próximo hogar te está esperando</h2>
+  <p class="reveal">Contacta hoy y descubre cómo puedo ayudarte a comprar, vender o alquilar.</p>
+  <a href="https://wa.me/34699804210" target="_blank" class="btn-cta-dark reveal">CONTACTAR AHORA</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text-main">LA HERRADURA</div>
+      <div class="logo-text-sub">LUXURY HOMES</div>
+      <p>Tu inmobiliaria de confianza en Granada, Málaga y Cádiz.</p>
+    </div>
+    <div class="footer-nav">
+      <h4>NAVEGACIÓN</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#venta">Venta</a></li>
+        <li><a href="#alquileres">Alquileres</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#zonas">Zonas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>CONTACTO</h4>
+      <p>📞 699 804 210</p>
+      <p>✉️ inmobiliarialuciacabrera@gmail.com</p>
+      <p>🕐 L-S: 10:00 - 18:00</p>
+    </div>
+    <div class="footer-social">
+      <h4>SÍGUEME</h4>
+      <a href="https://www.instagram.com/lucia_cabrera_agente" target="_blank">Instagram: @lucia_cabrera_agente</a>
+      <a href="https://www.facebook.com/" target="_blank">Facebook: Agente inmobiliario Lucía Cabrera</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 La Herradura Luxury Homes. Todos los derechos reservados.</div>
+</footer>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+  function toggleMenu(){
+    mobileMenu.classList.toggle('open');
+    menuOverlay.classList.toggle('show');
+  }
+  hamburger.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', toggleMenu);
+  document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', toggleMenu));
+
+  // Intersection Observer reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('[data-count]');
+  let countersStarted = false;
+  function animateCounters(){
+    if (countersStarted) return;
+    countersStarted = true;
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute('data-count'), 10);
+      const suffix = counter.getAttribute('data-suffix') || '';
+      let current = 0;
+      const step = Math.max(target / 40, 1);
+      const tick = () => {
+        current += step;
+        if (current >= target) {
+          counter.textContent = target + suffix;
+        } else {
+          counter.textContent = Math.floor(current) + suffix;
+          requestAnimationFrame(tick);
+        }
+      };
+      tick();
+    });
+  }
+  const heroStatsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        heroStatsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const heroStatsEl = document.querySelector('.hero-stats');
+  if (heroStatsEl) heroStatsObserver.observe(heroStatsEl);
+
+  // Contact form -> WhatsApp
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('f-nombre').value;
+    const telefono = document.getElementById('f-telefono').value;
+    const email = document.getElementById('f-email').value;
+    const tipo = document.getElementById('f-tipo').value;
+    const zona = document.getElementById('f-zona').value;
+    const mensaje = document.getElementById('f-mensaje').value;
+
+    const texto = `Hola Lucía, te escribo desde la web:%0A%0A` +
+      `Nombre: ${nombre}%0A` +
+      `Teléfono: ${telefono}%0A` +
+      `Email: ${email}%0A` +
+      `Interés: ${tipo}%0A` +
+      `Zona: ${zona}%0A` +
+      `Mensaje: ${mensaje}`;
+
+    window.open(`https://wa.me/34699804210?text=${texto}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
