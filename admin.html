@@ -593,11 +593,17 @@ function parsePrecioParaDB(val){
     const input = document.getElementById('f-precio');
     if (!input) return;
     input.addEventListener('input', function(){
-      const pos = this.selectionStart;
-      const oldLen = this.value.length;
+      const cursorPos = this.selectionStart;
+      // Contar caracteres significativos (dígitos y coma) antes del cursor
+      const sigBefore = this.value.slice(0, cursorPos).replace(/\./g, '').length;
       this.value = fmtPrecio(this.value);
-      const diff = this.value.length - oldLen;
-      this.setSelectionRange(pos + diff, pos + diff);
+      // Reposicionar cursor contando los mismos caracteres significativos
+      let sig = 0, newPos = this.value.length;
+      for (let i = 0; i < this.value.length; i++) {
+        if (this.value[i] !== '.') sig++;
+        if (sig === sigBefore) { newPos = i + 1; break; }
+      }
+      this.setSelectionRange(newPos, newPos);
     });
     input.addEventListener('blur', function(){
       this.value = fmtPrecio(this.value);
