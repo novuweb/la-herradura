@@ -244,8 +244,8 @@ input:checked + .slider::before{transform:translateX(20px);}
 
       <div class="form-row">
         <label>Precio (€)</label>
-        <input type="text" id="f-precio" placeholder="Ej: 125.000 · 1.250.000 · 850,50" required>
-        <small style="color:#999;font-size:11px;margin-top:4px;display:block;">Escribe el precio como quieras que aparezca en la web: 125.000 € · 1.250.000 € · 850,50 €/mes</small>
+        <input type="text" id="f-precio" placeholder="Ej: 125.000 · 1.250.000 · 850,50" required autocomplete="off">
+        <small style="color:#999;font-size:11px;margin-top:4px;display:block;">Los puntos de miles se añaden solos. Usa coma para decimales: 850,50</small>
       </div>
       <div class="form-row">
         <label>Título (tipo de vivienda - zona)</label>
@@ -557,6 +557,38 @@ document.getElementById('propForm').addEventListener('submit', async (e) => {
   closeModal();
   renderList();
 });
+
+/* ===== PRECIO AUTOFORMATO ===== */
+(function(){
+  function formatPrecio(val){
+    // Separar parte entera y decimal (coma como separador decimal)
+    const parts = val.replace(/\./g, '').split(',');
+    const entero = parts[0].replace(/\D/g, ''); // solo dígitos
+    const decimal = parts[1] !== undefined ? ',' + parts[1].replace(/\D/g, '') : '';
+    if (!entero) return decimal ? '0' + decimal : '';
+    // Añadir puntos cada 3 dígitos
+    return entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + decimal;
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    const input = document.getElementById('f-precio');
+    if (!input) return;
+
+    input.addEventListener('input', function(){
+      const pos = this.selectionStart;
+      const oldLen = this.value.length;
+      const formatted = formatPrecio(this.value);
+      this.value = formatted;
+      // Mantener posición del cursor aproximada
+      const diff = this.value.length - oldLen;
+      this.setSelectionRange(pos + diff, pos + diff);
+    });
+
+    input.addEventListener('blur', function(){
+      this.value = formatPrecio(this.value);
+    });
+  });
+})();
 
 /* ===== EXPORT (copia de seguridad) ===== */
 function exportJSON(){
