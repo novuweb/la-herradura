@@ -379,7 +379,7 @@ async function renderList(){
           ${thumb}
         </div>
         <div class="prop-body">
-          <div class="prop-price">${p.precio || '-'} ${priceUnit}</div>
+          <div class="prop-price">${fmtPrecio(p.precio) || '-'} ${priceUnit}</div>
           <div class="prop-title">${p.titulo || '(sin título)'}</div>
           <div class="prop-loc">📍 ${p.ubicacion || '-'}</div>
           <div class="prop-feats">
@@ -486,7 +486,7 @@ function editProp(id){
   document.getElementById('modalTitle').textContent = 'Editar propiedad';
   document.getElementById('f-op').value = p.tipo;
   document.getElementById('f-subtipo').value = p.subtipo || 'anual';
-  document.getElementById('f-precio').value = p.precio || '';
+  document.getElementById('f-precio').value = fmtPrecio(p.precio || '');
   document.getElementById('f-titulo').value = p.titulo || '';
   document.getElementById('f-ubicacion').value = p.ubicacion || '';
   document.getElementById('f-habitaciones').value = p.habitaciones || '';
@@ -559,33 +559,29 @@ document.getElementById('propForm').addEventListener('submit', async (e) => {
 });
 
 /* ===== PRECIO AUTOFORMATO ===== */
-(function(){
-  function formatPrecio(val){
-    // Separar parte entera y decimal (coma como separador decimal)
-    const parts = val.replace(/\./g, '').split(',');
-    const entero = parts[0].replace(/\D/g, ''); // solo dígitos
-    const decimal = parts[1] !== undefined ? ',' + parts[1].replace(/\D/g, '') : '';
-    if (!entero) return decimal ? '0' + decimal : '';
-    // Añadir puntos cada 3 dígitos
-    return entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + decimal;
-  }
+function fmtPrecio(val){
+  if (!val && val !== 0) return '';
+  const str = String(val).trim();
+  const parts = str.replace(/\./g, '').split(',');
+  const entero = parts[0].replace(/\D/g, '');
+  const decimal = parts[1] !== undefined ? ',' + parts[1].replace(/\D/g, '') : '';
+  if (!entero) return decimal || '';
+  return entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + decimal;
+}
 
+(function(){
   document.addEventListener('DOMContentLoaded', function(){
     const input = document.getElementById('f-precio');
     if (!input) return;
-
     input.addEventListener('input', function(){
       const pos = this.selectionStart;
       const oldLen = this.value.length;
-      const formatted = formatPrecio(this.value);
-      this.value = formatted;
-      // Mantener posición del cursor aproximada
+      this.value = fmtPrecio(this.value);
       const diff = this.value.length - oldLen;
       this.setSelectionRange(pos + diff, pos + diff);
     });
-
     input.addEventListener('blur', function(){
-      this.value = formatPrecio(this.value);
+      this.value = fmtPrecio(this.value);
     });
   });
 })();
