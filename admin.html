@@ -532,7 +532,7 @@ document.getElementById('propForm').addEventListener('submit', async (e) => {
   const data = {
     tipo: document.getElementById('f-op').value,
     subtipo: document.getElementById('f-subtipo').value,
-    precio: document.getElementById('f-precio').value || null,
+    precio: parsePrecioParaDB(document.getElementById('f-precio').value),
     titulo: document.getElementById('f-titulo').value,
     ubicacion: document.getElementById('f-ubicacion').value,
     habitaciones: document.getElementById('f-habitaciones').value || null,
@@ -561,12 +561,31 @@ document.getElementById('propForm').addEventListener('submit', async (e) => {
 /* ===== PRECIO AUTOFORMATO ===== */
 function fmtPrecio(val){
   if (!val && val !== 0) return '';
-  const str = String(val).trim();
-  const parts = str.replace(/\./g, '').split(',');
-  const entero = parts[0].replace(/\D/g, '');
-  const decimal = parts[1] !== undefined ? ',' + parts[1].replace(/\D/g, '') : '';
-  if (!entero) return decimal || '';
-  return entero.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + decimal;
+  let str = String(val).trim();
+  if (!str) return '';
+  let enteroStr, decimalStr = '';
+  if (str.includes(',')) {
+    // Coma = separador decimal (formato usuario: "850,50")
+    const idx = str.indexOf(',');
+    enteroStr = str.slice(0, idx).replace(/\./g, '').replace(/\D/g, '');
+    decimalStr = ',' + str.slice(idx + 1).replace(/\D/g, '');
+  } else if (/^\d+\.\d{1,2}$/.test(str)) {
+    // Punto con 1-2 dígitos = decimal de BD (ej: "850.5" o "850.50")
+    const [ent, dec] = str.split('.');
+    enteroStr = ent;
+    decimalStr = ',' + dec;
+  } else {
+    // Sin decimal: quitar puntos de miles que pudiera haber
+    enteroStr = str.replace(/\./g, '').replace(/\D/g, '');
+  }
+  if (!enteroStr) return decimalStr || '';
+  return enteroStr.replace(/\B(?=(\d{3})+(?!\d))/g, '.') + decimalStr;
+}
+
+function parsePrecioParaDB(val){
+  // Convierte "125.000" → "125000", "850,50" → "850.50" para que Supabase no lo trunque
+  if (!val) return null;
+  return val.replace(/\./g, '').replace(',', '.') || null;
 }
 
 (function(){
